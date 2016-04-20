@@ -4,6 +4,8 @@ import * as NativeTypes from './NativeTypes';
 
 export { NativeTypes, getEmptyImage };
 
-export default function createHTML5Backend(manager) {
-  return new HTML5Backend(manager);
+export default function createHTML5Backend(options) {
+	return (manager) => {
+  	return new HTML5Backend(manager, options);
+	}
 }
