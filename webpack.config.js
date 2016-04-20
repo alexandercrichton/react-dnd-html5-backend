@@ -8,21 +8,22 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'dist/ReactDnDHTML5Backend.min.js',
+    path: "../app/Refresh HTML/WYSIWYG/src/lib",
+    filename: 'react-dnd-html5-touch-backend.js',
     libraryTarget: 'umd',
-    library: 'ReactDnDHTML5Backend'
-  },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
-  ]
+    library: 'react-dnd-html5-touch-backend'
+  }
+  // plugins: [
+  //   new webpack.optimize.OccurenceOrderPlugin(),
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       'NODE_ENV': JSON.stringify('production')
+  //     }
+  //   }),
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     compressor: {
+  //       warnings: false
+  //     }
+  //   })
+  // ]
 };
