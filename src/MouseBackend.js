@@ -248,18 +248,15 @@ export default class MouseBackend {
   }
 
   handleTopDragStartCapture() {
-    console.log("handleTopDragStartCapture");
     this.clearCurrentDragSourceNode();
     this.dragStartSourceIds = [];
   }
 
   handleDragStart(e, sourceId) {
-    console.log("handleDragStart");
     this.dragStartSourceIds.unshift(sourceId);
   }
 
   handleTopDragStart(e) {
-    console.log("handleTopDragStart");
     const { dragStartSourceIds } = this;
     this.dragStartSourceIds = null;
 
@@ -348,7 +345,6 @@ export default class MouseBackend {
 
   handleTopDragEndCapture() {
     window.setTimeout(() => {
-      console.log("handleTopDragEndCapture");
       if (this.clearCurrentDragSourceNode()) {
         // Firefox can dispatch this event in an infinite loop
         // if dragend handler does something like showing an alert.
@@ -471,7 +467,6 @@ export default class MouseBackend {
   }
 
   handleTopDropCapture(e) {
-    console.log("handleTopDropCapture");
     this.dropTargetIds = [];
     e.preventDefault();
 
@@ -483,12 +478,10 @@ export default class MouseBackend {
   }
 
   handleDrop(e, targetId) {
-    console.log("handleDrop");
     this.dropTargetIds.unshift(targetId);
   }
 
   handleTopDrop(e) {
-    console.log("handleTopDrop");
     const { dropTargetIds } = this;
     this.dropTargetIds = [];
 
